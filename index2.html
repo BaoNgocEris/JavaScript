@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+
+    <script type="text/javascript">
+        console.log('hhh')
+        var nhapnamsinh = true;
+
+    while (nhapnamsinh) {
+        var namsinh = prompt ("Hãy nhập năm sinh của bạn");
+        theP2.innerHTML = namsinh;
+        var now = new Date().getFullYear();
+        if (namsinh > now) {
+            theP2.innerHTML = "Ơ kìa, năm nay là năm" + now;
+        } else {
+            nhapnamsinh = false;
+        }
+
+    }
+    </script>
+</body>
+</html>

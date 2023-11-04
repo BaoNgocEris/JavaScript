@@ -12,32 +12,34 @@
     <p id="location"></p>
     <p id="phonenumber"></p>
     <p id="year"></p>
-    <script>
+ <script type="text/javascript">
         var theP = document.getElementById("name");
         var theP2 = document.getElementById("year");
         var theP3 = document.getElementById("location");
         var theP4 = document.getElementById("phonenumber");
-        console.log(name);
+        
         alert ("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
         var ten = prompt ("Hãy nhập tên của bạn");
+        console.log(ten);
         theP.innerHTML = ten;
         var tp = prompt ("Hãy nhập Thành phố/Tỉnh bạn đang sống");
         theP3.innerHTML = tp;
         var sdt = prompt ("Hãy nhập số điện thoại của bạn");
         theP4.innerHTML = sdt;
         var nhapnamsinh = true;
+
         while (nhapnamsinh) {
             var namsinh = prompt ("Hãy nhập năm sinh của bạn");
             theP2.innerHTML = namsinh;
             var now = new Date().getFullYear();
             if (namsinh > now) {
-                theP2.innerHTML = "Ơ kìa, năm nay là năm" + now + "mà";
+                theP2.innerHTML = "Ơ kìa, năm nay là năm" + now +"mà";
             } else {
                 nhapnamsinh = false;
             }
-            
+
         }
-       
+
     </script>
 </body>
 </html>
