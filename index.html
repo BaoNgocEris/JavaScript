@@ -9,16 +9,22 @@
 <body>
     Bài tập ASMJS1
     <p id="name"></p>
-    <p id="tuoi"></p>
+    <p id="location"></p>
+    <p id="phonenumber"></p>
+    <p id="year"></p>
     <script>
         var theP = document.getElementById("name");
-        var theP2 = document.getElementById("tuoi");
+        var theP2 = document.getElementById("year");
+        var theP3 = document.getElementById("location");
+        var theP4 = document.getElementById("phonenumber");
         console.log(name);
         alert ("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
         var ten = prompt ("Hãy nhập tên của bạn");
         theP.innerHTML = ten;
         var tp = prompt ("Hãy nhập Thành phố/Tỉnh bạn đang sống");
+        theP3.innerHTML = tp;
         var sdt = prompt ("Hãy nhập số điện thoại của bạn");
+        theP4.innerHTML = sdt;
         var nhapnamsinh = true;
         while (nhapnamsinh) {
             var namsinh = prompt ("Hãy nhập năm sinh của bạn");
