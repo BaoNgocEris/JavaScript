@@ -9,10 +9,29 @@
 <body>
     Bài tập ASMJS1
     <p id="name"></p>
+    <p id="tuoi"></p>
     <script>
-        alert(“Chào mừng bạn đến với ứng dụng JavaScript đầu tiên”);
+        var theP = document.getElementById("name");
+        var theP2 = document.getElementById("tuoi");
+        console.log(name);
+        alert ("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
         var ten = prompt ("Hãy nhập tên của bạn");
-
+        theP.innerHTML = ten;
+        var tp = prompt ("Hãy nhập Thành phố/Tỉnh bạn đang sống");
+        var sdt = prompt ("Hãy nhập số điện thoại của bạn");
+        var nhapnamsinh = true;
+        while (nhapnamsinh) {
+            var namsinh = prompt ("Hãy nhập năm sinh của bạn");
+            theP2.innerHTML = namsinh;
+            var now = new Date().getFullYear();
+            if (namsinh > now) {
+                theP2.innerHTML = "Ơ kìa, năm nay là năm" + now + "mà";
+            } else {
+                nhapnamsinh = false;
+            }
+            
+        }
+       
     </script>
 </body>
 </html>
