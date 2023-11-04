@@ -12,7 +12,8 @@
     <p id="location"></p>
     <p id="phonenumber"></p>
     <p id="year"></p>
- <script type="text/javascript">
+    <button id="xuathien">CLICK</button>
+    <script type="text/javascript">
         var theP = document.getElementById("name");
         var theP2 = document.getElementById("year");
         var theP3 = document.getElementById("location");
@@ -38,6 +39,10 @@
                 nhapnamsinh = false;
             }
 
+        }
+        document.getElementById("xuathien").onclick = hienan;
+        function hienan() {
+            console.log("Đã CLICK");
         }
 
     </script>
