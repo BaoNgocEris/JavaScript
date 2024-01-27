@@ -15,13 +15,15 @@
     <p> Điểm Lý</p> <input type="text" id="diemly">
     <p>Điểm Toán</p><input type="text" id="diemtoan">
     <p>Điểm Hóa</p><input type="text" id="diemhoa">
+    <p>Điểm Trung Bình</p> <input type="text" id="tinhdiemtrungbinh">
+
 
     <br>
     <br>
 
     <button id="nhap">Nhập</button>
-    <button>Tính điểm trung bình</button>
-    <button>Xác định học lực</button>
+    <button id="diemtb">Tính điểm trung bình</button>
+    <button id="hocluc">Xác định học lực</button>
 
     <br>
     <hr>
@@ -43,48 +45,65 @@
         </tbody>
     </table>
     <script>
+        var index = 0
+        function addrow() {
+            let tbody = document.getElementById("tbody");
+            let tr = document.createElement("tr");
+            let tdTen = document.createElement("td");
+            let tdDOB = document.createElement("td");
+            let tdDiemHoa = document.createElement("td");
+            let tdDiemToan = document.createElement("td");
+            let tdDiemLy = document.createElement("td");
+            let tdDiemTB = document.createElement("td");
+            let tdHocLuc = document.createElement("td");
+            tdTen.id = "tdTen" + index
+            tdDOB.id = "tdDOB" + index
+            tdDiemHoa.id = "tdDiemHoa" + index
+            tdDiemToan.id = "tdDiemToan" + index
+            tdDiemLy.id = "tdDiemLy" + index
+            tdDiemTB.id = "tdDiemTB" + index
+            tdHocLuc.id = "tdHocLuc" + index
 
-        function addRow() {
-            var tbody = document.getElementById("tbody");
-            console.log(tbody)
-            var tr = document.createElement("tr");
-            var tdTen = document.createElement("td");
-            var tdDOB = document.createElement("td");
-            var tdDiemToan = document.createElement("td");
-            var tdDiemLy = document.createElement("td");
-            var tdDiemHoa = document.createElement("td");
-            var tdDiemTB = document.createElement("td");
-            var tdHocluc = document.createElement("td");
-
-            tbody.append(tr1);
-            tr1.append(tdTen);
-            tr1.append(tdDOB);
-            tr1.append(tdDiemHoa);
-            tr1.append(tdDiemLy);
-            tr1.append(tdDiemToan);
-            tr1.append(tdDiemTB);
-            tr1.append(tdHocluc);
+            tbody.append(tr);
+            tr.append(tdTen);
+            tr.append(tdDOB);
+            tr.append(tdDiemHoa);
+            tr.append(tdDiemToan);
+            tr.append(tdDiemLy);
+            tr.append(tdDiemTB);
+            tr.append(tdHocLuc);
+            let nhapten = document.getElementById("ten");
+            tdTen.innerHTML = nhapten.value;
+            let nhapdob = document.getElementById("dob");
+            tdDOB.innerHTML = nhapdob.value;
+            let nhapdiemhoa = document.getElementById("diemhoa");
+            tdDiemHoa.innerHTML = nhapdiemhoa.value;
+            let nhapdiemtoan = document.getElementById("diemtoan");
+            tdDiemToan.innerHTML = nhapdiemtoan.value;
+            let nhapdiemly = document.getElementById("diemly");
+            tdDiemLy.innerHTML = nhapdiemly.value;
+            index = index + 1
         }
+        let nhap = document.getElementById("nhap");
+        nhap.onclick = addrow
 
-        var nhap = document.getElementById("nhap");
-        nhap.onclick = addRow()
 
-        let nhapten = document.getElementById("ten");
-        tdTen = nhapten.value;
-        let nhapdob = document.getElementById("dob");
-        tdDOB = nhapdob.value;
-        let nhapdiemly = document.getElementById("diemly");
-        tdDiemLy = nhapdiemly.value;
-        let nhapdiemtoan = document.getElementById("diemtoan");
-        tdDiemToan = nhapdiemtoan.value;
-        let nhapdiemhoa = document.getElementById("diemhoa");
-        tdDiemHoa = nhapdiemhoa.value;
+
+
+
 
         function DiemTB() {
+            var ldHoa = document.getElementById("tdDiemHoa0")
+            var ldToan = document.getElementById("tdDiemToan0")
+            var ldLy = document.getElementById("tdDiemLy0")
+            var ldTB = document.getElementById("tdDiemTB0")
+            var lHL = document.getElementById("tdHocLuc0")
 
+            ldTB = (ldHoa -(- ldToan) - (- ldLy))/3
+        
         }
 
-        var DiemTrungBinh = document.getElementById("tinhdiemtrungbinh");
+        let DiemTrungBinh = document.getElementById("diemtb");
         DiemTrungBinh.onclick = DiemTB;
 
     </script>
