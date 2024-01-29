@@ -45,7 +45,7 @@
         </tbody>
     </table>
     <script>
-        var index = 0
+        let index = 0
         function addrow() {
             let tbody = document.getElementById("tbody");
             let tr = document.createElement("tr");
@@ -93,18 +93,39 @@
 
 
         function DiemTB() {
-            var ldHoa = document.getElementById("tdDiemHoa0")
-            var ldToan = document.getElementById("tdDiemToan0")
-            var ldLy = document.getElementById("tdDiemLy0")
-            var ldTB = document.getElementById("tdDiemTB0")
-            var lHL = document.getElementById("tdHocLuc0")
 
-            ldTB = (ldHoa -(- ldToan) - (- ldLy))/3
-        
+            for (let i = 0; i < index; i++) {
+                let ldHoa = document.getElementById("tdDiemHoa" + i)
+                let ldToan = document.getElementById("tdDiemToan" + i)
+                let ldLy = document.getElementById("tdDiemLy" + i)
+                let ldTB = document.getElementById("tdDiemTB" + i)
+
+                ldTB.innerHTML = (ldHoa.innerHTML - (- ldToan.innerHTML) - (- ldLy.innerHTML)) / 3
+
+            }
         }
 
         let DiemTrungBinh = document.getElementById("diemtb");
         DiemTrungBinh.onclick = DiemTB;
+
+        function HocLuc() {
+            for (let i = 0; i < index; i++) {
+                let lHL = document.getElementById("tdHocLuc" + i)
+                let ldTB = document.getElementById("tdDiemTB" + i)
+                if (ldTB.innerHTML >= 8) {
+                    
+                    lHL.innerHTML="Gioi"
+                } else if (ldTB.innerHTML >= 6) {
+                    lHL.innerHTML="Kha"
+                } else lHL.innerHTML="TB"
+
+            }
+
+
+
+        }
+        let hocLuc = document.getElementById("hocluc");
+        hocLuc.onclick = HocLuc;
 
     </script>
 </body>
